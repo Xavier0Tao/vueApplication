@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v-on 补充</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="text"  @keyup.enter="sayhi()">
+        <input type="button" value="传参" v-on:click="para(age,name)"/>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                age:10,
+                name:"xavier"
+            },
+            methods:{
+                para:function(age,name){
+                    alert(age+name);
+                },
+                sayhi:function(){
+                    alert("keyup");
+                }
+            }
+        })
+
+    </script>
+
+
+</body>
+
+</html>
