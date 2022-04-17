@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+</head>
+
+<body>
+
+    
+    <div id="cardio">
+        <button @click="pre" v-show="index != 0">pre</button>
+        <input v-bind:value="content[index]" type="text"/>
+        <button v-on:click="next" v-show="index != content.length-1"> next</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#cardio",
+            data:{
+                content:[
+                    "a","b","c","d"
+                ],
+                index:0
+            },
+            methods:{
+                pre:function(){
+                    this.index--;
+                },
+                next:function(){
+                    this.index++;
+                }
+            }
+        })
+
+    </script>
+
+
+</body>
+
+</html>

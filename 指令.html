@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 本地应用</title>
+</head>
+
+<body>
+
+    <div id="app1">
+        <h2>
+            {{message+"凭借   "}}and other content
+        </h2>
+        <h1 v-text="info"></h1>
+    </div>
+
+    <div id="app2">
+        <input type="button" value="v-on" @click="click"/>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // ****************** v-text v-html*****************
+        // ****************** v-text v-html*****************
+        // ****************** v-text v-html*****************
+        var app1 = new Vue({
+            el: "#app1",
+            data: {
+                message: "hells",
+                info:"information"
+            }
+        })
+
+//***********************v-on****************
+//***********************v-on****************
+//***********************v-on****************
+        var app2 = new Vue({
+            el:"#app2",
+            methods:{
+                click:function(){
+                    alert("click...");
+                }
+            }
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>
