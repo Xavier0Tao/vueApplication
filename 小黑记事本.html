@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v-on 补充</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        #todo{
+            border-width: 5vh;
+            border-color: black;
+        }
+        #todobody{
+            text-align: center;
+            padding:0 auto;
+        }
+        #bottom{
+            margin: 0 auto;
+        }
+        ul{
+            text-decoration: none;
+            list-style: none;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div id="todo">
+        <div id="todobody">
+            <h3>To do list</h3>
+            <!-- 输入框，内容与content绑定 -->
+            <input type="text" v-model="content"  @keyup.enter="add">
+            <!-- v-for 生成的列表 -->
+            <div>
+                <ul>
+                    <!-- v-for 动态生成列表  -->
+                    <li v-for="(item,index) in list">
+                        {{index+1}},{{item}}---<a href="#" ><span @click="del(index)">close</span></a>
+                    </li>
+                </ul>
+                <!-- 与数组长度绑定，动态更新列表数量 -->
+                <span v-show="list.length > 0" v-text="this.list.length"></span>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+    <script>
+        var app = new Vue({
+            el:"#todo",
+            data:{
+                // 数据列表
+                list:["vue","datavase","springboot","security"],
+                // content绑定文本输入框
+                content:""
+            },
+            methods:{
+                //添加新项
+                add:function(){
+                    this.list.push(this.content);
+                },
+                // splice(要删除的下标,删除几个) 默认全部删除
+                del:function(index){
+                    this.list.splice(index,1);
+                }
+            }
+        })
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+</head>
+
+<body>
+
+    <div class="" id="list1">
+        <ul>
+            <li v-for="(item,index) in sorce" :title="item">
+                {{index}},{{item}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#list1",
+            data:{
+                sorce:[10,20,30,49,57]
+            },
+            methods:{
+                
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>
